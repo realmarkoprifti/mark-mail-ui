@@ -67,12 +67,15 @@ function ShowEmail(props) {
               <Tooltip label='Favourite'>
                 <Button variant={"ghost"} _hover={{background: "transparent"}} onClick={() => {
                   change_status("favourites", props.id, true)
-                  .then(response => console.log(response))
+                  document.querySelector("#close-btn").click()
+                  localStorage.setItem("mailbox", "favourites")
                 }}><Icon _hover={{color: "yellow.300"}} fontSize={"30px"} as={AiFillStar} /></Button>
               </Tooltip>
               <Tooltip label='Archive'>
                 <Button variant={"ghost"} _hover={{background: "transparent"}} onClick={() => {
                     change_status("archived", props.id)
+                    document.querySelector("#close-btn").click()
+                    localStorage.setItem("mailbox", "archived")
                 }}><Icon fontSize={"30px"} as={GoTrashcan} /></Button>
               </Tooltip>
               </HStack>

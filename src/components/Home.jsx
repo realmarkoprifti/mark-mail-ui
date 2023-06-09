@@ -89,6 +89,7 @@ function Home() {
       </Box>
       {!loading ? <Box flex="1">
           {!error && emails.length > 0 ? <TableContainer>
+            <Heading margin={"15px"}>{mailbox[0].toUpperCase() + mailbox.slice(1, mailbox.length - 0)}</Heading>
             <Table variant='simple'>
               <Thead>
                 <Tr>
